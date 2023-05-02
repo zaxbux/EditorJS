@@ -119,7 +119,7 @@ After creating new JS scripts with new block type Class, you can go through step
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/raw.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/raw.js',
                 ],
                 'view' => 'zaxbux.editorjs::blocks.raw'
             ],

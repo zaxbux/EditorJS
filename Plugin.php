@@ -28,9 +28,9 @@ class Plugin extends PluginBase
         return [
             'name' => 'zaxbux.editorjs::lang.plugin.name',
             'description' => 'zaxbux.editorjs::lang.plugin.description',
-            'author' => 'Nick Khaetsky',
+            'author' => 'Zach Schneider',
             'icon' => 'icon-pencil-square-o',
-            'homepage' => 'https://github.com/FlusherDock1/EditorJS'
+            'homepage' => 'https://github.com/zaxbux/wn-editorjs-plugin'
         ];
     }
 

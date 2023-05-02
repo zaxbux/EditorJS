@@ -82,7 +82,7 @@ class MLEditorJS extends EditorJS
      */
     protected function getParentViewPath()
     {
-        return base_path().'/plugins/zaxbux/editorjs/formwidgets/editorjs/partials';
+        return plugins_path('zaxbux/editorjs/formwidgets/editorjs/partials');
     }
 
     /**
