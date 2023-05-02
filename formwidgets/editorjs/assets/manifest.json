@@ -1,0 +1,11 @@
+{
+  "src/editor.js": {
+    "file": "js/editor.js",
+    "isEntry": true,
+    "src": "src/editor.js"
+  },
+  "style.css": {
+    "file": "css/style.css",
+    "src": "style.css"
+  }
+}

@@ -7,13 +7,23 @@
 <?php else: ?>
 
     <div
-        class="editorjs-wrapper"
-        data-control="editorjs"
         id="<?= $this->getId() ?>"
-        data-placeholder="<?= $placeholder ?>"
-        data-settings="<?= $toolSettings ?>">
+        class="field-editorjs <?php if ($readOnly || $disabled): ?>disabled<?php endif ?>"
+        data-control="editorjs"
+        data-control-alias="<?= e($this->alias) ?>"
+        data-settings="<?= e(json_encode($settings)) ?>"
+        data-block-settings="<?= e(json_encode($blockSettings)) ?>"
+        data-tune-settings="<?= e(json_encode($tuneSettings)) ?>"
+        data-inline-toolbar-settings="<?= e(json_encode($inlineToolbarSettings)) ?>"
+        data-upload-handler="<?= $this->getEventHandler('onUpload') ?>"
+        <?php if ($useMediaManager): ?>
+            data-use-media-manager="true"
+        <?php endif; ?>
+        <?php if ($readOnly || $disabled): ?>
+            data-disabled="true"
+        <?php endif; ?>
+        <?= $this->formField->getAttributes() ?>>
         <textarea
-            type="hidden"
             style="display: none"
             name="<?= $name ?>"
             id="<?= $this->getId('textarea') ?>"><?= $value ?></textarea>

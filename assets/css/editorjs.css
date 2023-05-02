@@ -42,7 +42,7 @@
     resize: vertical;
 }
 
-.editor-js-content .editor-js-image {
+.editor-js-content .editor-js-mediamanager {
     --bg-color: #CDD1E0;
     --front-color: #388AE5;
     --border-color: #E8E8EB;
@@ -51,31 +51,31 @@
     margin-bottom: 10px;
 }
 
-.editor-js-content .editor-js-image img {
+.editor-js-content .editor-js-mediamanager img {
     max-width: 100%;
     vertical-align: bottom;
     display: block;
 }
 
-.editor-js-content .editor-js-image .image-wrapper.withBorder img{
+.editor-js-content .editor-js-mediamanager .media-wrapper.withBorder img {
     border: 1px solid var(--border-color);
 }
 
-.editor-js-content .editor-js-image .image-wrapper.withBackground {
+.editor-js-content .editor-js-mediamanager .media-wrapper.withBackground {
     padding: 15px;
     background-color: #cdd1e0;
 }
 
-.editor-js-content .editor-js-image .image-wrapper.withBackground img{
+.editor-js-content .editor-js-mediamanager .media-wrapper.withBackground img {
     max-width: 60%;
     margin: 0 auto;
 }
 
-.editor-js-content .editor-js-image .image-wrapper.stretched img{
+.editor-js-content .editor-js-mediamanager .media-wrapper.stretched img {
     width: 100%;
 }
 
-.editor-js-content .editor-js-image span {
+.editor-js-content .editor-js-mediamanager span {
     text-align: center;
     display: block;
     padding: 10px 0 20px;

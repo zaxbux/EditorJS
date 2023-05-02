@@ -43,7 +43,7 @@
         this.$el.multiLingual()
 
         this.$el.on('setLocale.oc.multilingual', this.proxy(this.onSetLocale))
-        this.$textarea.on('syncContent.oc.editorjs', this.proxy(this.onSyncContent))
+        this.$textarea.on('formwidgets.editorjs.change', this.proxy(this.onSyncContent))
         this.$el.one('dispose-control', this.proxy(this.dispose))
     }
 

@@ -1,6 +1,8 @@
-<?php namespace ReaZzon\Editor\Classes\Exceptions;
+<?php
 
-use October\Rain\Exception\ApplicationException;
+namespace ReaZzon\Editor\Classes\Exceptions;
+
+use Winter\Storm\Exception\ApplicationException;
 
 /**
  * Class PluginErrorException
@@ -16,7 +18,7 @@ class PluginErrorException extends ApplicationException
     public function render(): array
     {
         $errorBody = [
-            'success' => 0
+            'success' => false,
         ];
 
         if (!empty($this->getMessage())) {

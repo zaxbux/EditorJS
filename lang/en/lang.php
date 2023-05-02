@@ -51,4 +51,7 @@ return [
             ]
         ]
     ],
+    'formwidget' => [
+        'placeholder' => 'Start typing...',
+    ],
 ];

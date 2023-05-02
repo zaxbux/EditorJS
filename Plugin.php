@@ -1,4 +1,6 @@
-<?php namespace ReaZzon\Editor;
+<?php
+
+namespace ReaZzon\Editor;
 
 use Backend, Event;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -166,7 +168,7 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/header.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/header.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.heading'
             ],
@@ -176,7 +178,7 @@ class Plugin extends PluginBase
                     'shortcut' => 'CMD+SHIFT+M',
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/marker.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/marker.umd.cjs',
                 ]
             ],
             'image' => [
@@ -184,8 +186,8 @@ class Plugin extends PluginBase
                     'class' => 'ImageTool',
                     'config' => [
                         'endpoints' => [
-                            'byFile' => config('app.url').'/editorjs/plugins/image/uploadFile',
-                            'byUrl' => config('app.url').'/editorjs/plugins/image/fetchUrl',
+                            'byFile' => config('app.url') . '/editorjs/plugins/image/uploadFile',
+                            'byUrl' => config('app.url') . '/editorjs/plugins/image/fetchUrl',
                         ]
                     ]
                 ],
@@ -221,7 +223,7 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/image.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/image.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.image'
             ],
@@ -229,7 +231,7 @@ class Plugin extends PluginBase
                 'settings' => [
                     'class' => 'AttachesTool',
                     'config' => [
-                        'endpoint' => config('app.url').'/editorjs/plugins/attaches',
+                        'endpoint' => config('app.url') . '/editorjs/plugins/attaches',
                     ]
                 ],
                 'validation' => [
@@ -255,9 +257,78 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/attaches.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/attaches.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.attaches'
+            ],
+            'mediamanager' => [
+                'settings' => [
+                    'class' => 'MediaManagerTool',
+                    'config' => [],
+                ],
+                'validation' => [
+                    'file' => [
+                        'type' => 'array',
+                        'data' => [
+                            'url' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'title' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'documentType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'extension' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'size' => [
+                                'type' => 'int',
+                                'required' => false,
+                            ],
+                            'lastModified' => [
+                                'type' => 'int',
+                                'required' => false,
+                            ],
+                            'folder' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                    'caption' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'addBorder' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'addBackground' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'stretched' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'attaches' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                'scripts' => [
+                    '/plugins/reazzon/editor/assets/js/src/mediamanager/dist/mediamanager.umd.js',
+                ],
+                'view' => 'reazzon.editor::blocks.mediamanager',
             ],
             'linkTool' => [
                 'settings' => [
@@ -291,9 +362,21 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/link.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/link.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.link'
+            ],
+            'linkautocomplete' => [
+                'settings' => [
+                    'class' => 'LinkAutocomplete',
+                    'config' => [
+                        'endpoint' => '/editorjs/plugins/linkautocomplete',
+                        'queryParam' => 'q',
+                    ]
+                ],
+                'scripts' => [
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/linkautocomplete.umd.cjs',
+                ],
             ],
             'list' => [
                 'settings' => [
@@ -304,10 +387,10 @@ class Plugin extends PluginBase
                     'style' => [
                         'type' => 'string',
                         'canBeOnly' =>
-                            [
-                                0 => 'ordered',
-                                1 => 'unordered',
-                            ],
+                        [
+                            0 => 'ordered',
+                            1 => 'unordered',
+                        ],
                     ],
                     'items' => [
                         'type' => 'array',
@@ -320,7 +403,7 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/list.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/list.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.list'
             ],
@@ -351,7 +434,7 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/checklist.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/checklist.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.checklist'
             ],
@@ -380,7 +463,7 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/table.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/table.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.table'
             ],
@@ -406,7 +489,7 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/quote.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/quote.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.quote'
             ],
@@ -420,7 +503,7 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/code.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/code.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.code'
             ],
@@ -450,7 +533,7 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/embed.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/embed.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.embed'
             ],
@@ -465,7 +548,7 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/raw.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/raw.umd.cjs',
                 ],
                 'view' => 'reazzon.editor::blocks.raw'
             ],
@@ -474,7 +557,7 @@ class Plugin extends PluginBase
                     'class' => 'Delimiter'
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/delimiter.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/delimiter.umd.cjs',
                 ],
                 'validation' => [],
                 'view' => 'reazzon.editor::blocks.delimiter'
@@ -484,7 +567,7 @@ class Plugin extends PluginBase
                     'class' => 'Underline'
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/underline.js',
+                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/underline.umd.cjs',
                 ]
             ]
         ];
@@ -495,7 +578,7 @@ class Plugin extends PluginBase
      */
     private function registerErrorHandler(): void
     {
-        \App::error(function(PluginErrorException $exception) {
+        \App::error(function (PluginErrorException $exception) {
             return app(ResponseFactory::class)
                 ->make(
                     $exception->render(),

@@ -1,4 +1,6 @@
-<?php namespace ReaZzon\Editor\Classes\Plugins\Image;
+<?php
+
+namespace ReaZzon\Editor\Classes\Plugins\Image;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Request;
@@ -41,7 +43,7 @@ class Plugin
         try {
             $file = $this->$type($request);
             return new ImageResource($file);
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             throw new PluginErrorException;
         }
     }
@@ -54,7 +56,7 @@ class Plugin
     {
         /** @var UploadedFile $image */
         $image = $request->file('image');
-        if (null === $image || !$image instanceof UploadedFile){
+        if (null === $image || !$image instanceof UploadedFile) {
             throw new PluginErrorException;
         }
 
@@ -71,7 +73,7 @@ class Plugin
     protected function fetchUrl(Request $request): string
     {
         $fileUrl = $request->input('url');
-        if (empty($fileUrl)){
+        if (empty($fileUrl)) {
             throw new PluginErrorException;
         }
 
