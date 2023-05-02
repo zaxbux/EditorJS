@@ -1,4 +1,4 @@
-<?php namespace ReaZzon\Editor\Classes\Plugins\Attaches\Resources;
+<?php namespace Zaxbux\EditorJS\Classes\Plugins\Attaches\Resources;
 
 
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -6,7 +6,7 @@ use System\Models\File;
 
 /**
  * Class AttachResource
- * @package ReaZzon\Editor\Classes\Plugins\Attaches\Resources
+ * @package Zaxbux\EditorJS\Classes\Plugins\Attaches\Resources
  */
 class AttachResource extends JsonResource
 {

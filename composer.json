@@ -1,17 +1,39 @@
 {
-    "name": "reazzon/editor-plugin",
-    "type": "october-plugin",
-    "description": "Most powerful, next generation block styled editor with multilingual support.",
+    "name": "zaxbux/wn-editorjs-plugin",
+    "type": "winter-plugin",
+    "keywords": [
+        "winter cms",
+        "winter",
+        "plugin",
+        "editor.js"
+    ],
+    "description": "Integrates Editor.js with Winter CMS",
+    "homepage": "https://github.com/zaxbux/wn-editorjs-plugin",
     "require": {
         "ext-json": "*",
         "composer/installers": "~1.0",
         "codex-team/editor.js": "^2.0"
     },
+    "replace": {
+        "reazzon/editor-plugin": "~1.9.3"
+    },
     "license": "MIT",
     "authors": [
         {
             "name": "Nick Khaetsky",
-            "email": "rzzsapb@gmail.com"
+            "email": "rzzsapb@gmail.com",
+            "role": "Original Author"
+        },
+        {
+            "name": "Zachary Schneider",
+            "email": "hello@zacharyschneider.ca"
         }
-    ]
+    ],
+    "support": {
+        "issues": "https://github.com/zaxbux/wn-editorjs-plugin/issues",
+        "source": "https://github.com/zaxbux/wn-editorjs-plugin"
+    },
+    "extra": {
+        "installer-name": "editorjs"
+    }
 }

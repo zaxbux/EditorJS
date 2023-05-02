@@ -1,12 +1,12 @@
-<?php namespace ReaZzon\Editor\Classes\Plugins\LinkTool;
+<?php namespace Zaxbux\EditorJS\Classes\Plugins\LinkTool;
 
 use Illuminate\Http\Request;
-use ReaZzon\Editor\Classes\Exceptions\PluginErrorException;
-use ReaZzon\Editor\Classes\Plugins\LinkTool\Resources\LinkResource;
+use Zaxbux\EditorJS\Classes\Exceptions\PluginErrorException;
+use Zaxbux\EditorJS\Classes\Plugins\LinkTool\Resources\LinkResource;
 
 /**
  * LinkTool Plugin
- * @package ReaZzon\Editor\Classes\Plugins\LinkTool
+ * @package Zaxbux\EditorJS\Classes\Plugins\LinkTool
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class Plugin

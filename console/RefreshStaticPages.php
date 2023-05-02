@@ -1,4 +1,4 @@
-<?php namespace ReaZzon\Editor\Console;
+<?php namespace Zaxbux\EditorJS\Console;
 
 use Illuminate\Console\Command;
 
@@ -10,7 +10,7 @@ class RefreshStaticPages extends Command
     /**
      * @var string name is the console command name
      */
-    protected $name = 'editor:refresh.static-pages';
+    protected $name = 'editorjs:refresh.static-pages';
 
     /**
      * @var string description is the console command description

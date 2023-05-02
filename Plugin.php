@@ -1,19 +1,19 @@
-<?php namespace ReaZzon\Editor;
+<?php namespace Zaxbux\EditorJS;
 
 use Backend, Event;
 use System\Classes\PluginBase;
-use ReaZzon\Editor\Console\RefreshStaticPages;
+use Zaxbux\EditorJS\Console\RefreshStaticPages;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use ReaZzon\Editor\Classes\Event\ProcessMLFields;
-use ReaZzon\Editor\Classes\Exceptions\PluginErrorException;
+use Zaxbux\EditorJS\Classes\Event\ProcessMLFields;
+use Zaxbux\EditorJS\Classes\Exceptions\PluginErrorException;
 
-use ReaZzon\Editor\Behaviors\ConvertToHtml;
-use ReaZzon\Editor\Classes\Event\ExtendWinterBlogPlugin;
-use ReaZzon\Editor\Classes\Event\ExtendWinterPagesPlugin;
+use Zaxbux\EditorJS\Behaviors\ConvertToHtml;
+use Zaxbux\EditorJS\Classes\Event\ExtendWinterBlogPlugin;
+use Zaxbux\EditorJS\Classes\Event\ExtendWinterPagesPlugin;
 
 /**
  * Editor Plugin Information File
- * @package ReaZzon\Editor
+ * @package Zaxbux\EditorJS
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class Plugin extends PluginBase
@@ -26,8 +26,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'reazzon.editor::lang.plugin.name',
-            'description' => 'reazzon.editor::lang.plugin.description',
+            'name' => 'zaxbux.editorjs::lang.plugin.name',
+            'description' => 'zaxbux.editorjs::lang.plugin.description',
             'author' => 'Nick Khaetsky',
             'icon' => 'icon-pencil-square-o',
             'homepage' => 'https://github.com/FlusherDock1/EditorJS'
@@ -39,7 +39,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->registerConsoleCommand('editor:refresh.static-pages', RefreshStaticPages::class);
+        $this->registerConsoleCommand('editorjs:refresh.static-pages', RefreshStaticPages::class);
         $this->registerErrorHandler();
     }
 
@@ -63,9 +63,9 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'reazzon.editor.access_settings' => [
-                'tab' => 'reazzon.editor::lang.plugin.name',
-                'label' => 'reazzon.editor::lang.permission.access_settings'
+            'zaxbux.editorjs.access_settings' => [
+                'tab' => 'zaxbux.editorjs::lang.plugin.name',
+                'label' => 'zaxbux.editorjs::lang.permission.access_settings'
             ],
         ];
     }
@@ -79,11 +79,11 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label' => 'reazzon.editor::lang.settings.menu_label',
-                'description' => 'reazzon.editor::lang.settings.menu_description',
-                'category' => 'reazzon.editor::lang.plugin.name',
-                'class' => \ReaZzon\Editor\Models\Settings::class,
-                'permissions' => ['reazzon.editor.access_settings'],
+                'label' => 'zaxbux.editorjs::lang.settings.menu_label',
+                'description' => 'zaxbux.editorjs::lang.settings.menu_description',
+                'category' => 'zaxbux.editorjs::lang.plugin.name',
+                'class' => \Zaxbux\EditorJS\Models\Settings::class,
+                'permissions' => ['zaxbux.editorjs.access_settings'],
                 'icon' => 'icon-cog',
                 'order' => 500,
             ]
@@ -98,8 +98,8 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            \ReaZzon\Editor\FormWidgets\EditorJS::class => 'editorjs',
-            \ReaZzon\Editor\FormWidgets\MLEditorJS::class => 'mleditorjs',
+            \Zaxbux\EditorJS\FormWidgets\EditorJS::class => 'editorjs',
+            \Zaxbux\EditorJS\FormWidgets\MLEditorJS::class => 'mleditorjs',
         ];
     }
 
@@ -144,7 +144,7 @@ class Plugin extends PluginBase
                         'allowedTags' => 'i,b,u,a[href],span[class],code[class],mark[class]'
                     ]
                 ],
-                'view' => 'reazzon.editor::blocks.paragraph'
+                'view' => 'zaxbux.editorjs::blocks.paragraph'
             ],
             'header' => [
                 'settings' => [
@@ -161,9 +161,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/header.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/header.js',
                 ],
-                'view' => 'reazzon.editor::blocks.heading'
+                'view' => 'zaxbux.editorjs::blocks.heading'
             ],
             'Marker' => [
                 'settings' => [
@@ -171,7 +171,7 @@ class Plugin extends PluginBase
                     'shortcut' => 'CMD+SHIFT+M',
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/marker.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/marker.js',
                 ]
             ],
             'image' => [
@@ -216,9 +216,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/image.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/image.js',
                 ],
-                'view' => 'reazzon.editor::blocks.image'
+                'view' => 'zaxbux.editorjs::blocks.image'
             ],
             'attaches' => [
                 'settings' => [
@@ -250,9 +250,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/attaches.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/attaches.js',
                 ],
-                'view' => 'reazzon.editor::blocks.attaches'
+                'view' => 'zaxbux.editorjs::blocks.attaches'
             ],
             'linkTool' => [
                 'settings' => [
@@ -286,9 +286,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/link.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/link.js',
                 ],
-                'view' => 'reazzon.editor::blocks.link'
+                'view' => 'zaxbux.editorjs::blocks.link'
             ],
             'list' => [
                 'settings' => [
@@ -315,9 +315,9 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/list.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/list.js',
                 ],
-                'view' => 'reazzon.editor::blocks.list'
+                'view' => 'zaxbux.editorjs::blocks.list'
             ],
             'checklist' => [
                 'settings' => [
@@ -346,9 +346,9 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/checklist.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/checklist.js',
                 ],
-                'view' => 'reazzon.editor::blocks.checklist'
+                'view' => 'zaxbux.editorjs::blocks.checklist'
             ],
             'table' => [
                 'settings' => [
@@ -375,9 +375,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/table.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/table.js',
                 ],
-                'view' => 'reazzon.editor::blocks.table'
+                'view' => 'zaxbux.editorjs::blocks.table'
             ],
             'quote' => [
                 'settings' => [
@@ -401,9 +401,9 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/quote.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/quote.js',
                 ],
-                'view' => 'reazzon.editor::blocks.quote'
+                'view' => 'zaxbux.editorjs::blocks.quote'
             ],
             'code' => [
                 'settings' => [
@@ -415,9 +415,9 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/code.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/code.js',
                 ],
-                'view' => 'reazzon.editor::blocks.code'
+                'view' => 'zaxbux.editorjs::blocks.code'
             ],
             'embed' => [
                 'settings' => [
@@ -445,9 +445,9 @@ class Plugin extends PluginBase
                     ],
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/embed.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/embed.js',
                 ],
-                'view' => 'reazzon.editor::blocks.embed'
+                'view' => 'zaxbux.editorjs::blocks.embed'
             ],
             'raw' => [
                 'settings' => [
@@ -460,26 +460,26 @@ class Plugin extends PluginBase
                     ]
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/raw.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/raw.js',
                 ],
-                'view' => 'reazzon.editor::blocks.raw'
+                'view' => 'zaxbux.editorjs::blocks.raw'
             ],
             'delimiter' => [
                 'settings' => [
                     'class' => 'Delimiter'
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/delimiter.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/delimiter.js',
                 ],
                 'validation' => [],
-                'view' => 'reazzon.editor::blocks.delimiter'
+                'view' => 'zaxbux.editorjs::blocks.delimiter'
             ],
             'underline' => [
                 'settings' => [
                     'class' => 'Underline'
                 ],
                 'scripts' => [
-                    '/plugins/reazzon/editor/formwidgets/editorjs/assets/js/tools/underline.js',
+                    '$/zaxbux/editorjs/formwidgets/editorjs/assets/js/tools/underline.js',
                 ]
             ]
         ];

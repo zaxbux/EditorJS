@@ -1,13 +1,13 @@
 <?php
 
-namespace ReaZzon\Editor\Models;
+namespace Zaxbux\EditorJS\Models;
 
 use Model;
 use System\Classes\PluginManager;
 
 /**
  * Class Settings
- * @package ReaZzon\Editor\Models
+ * @package Zaxbux\EditorJS\Models
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class Settings extends Model

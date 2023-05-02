@@ -1,4 +1,4 @@
-<?php namespace ReaZzon\Editor\Behaviors;
+<?php namespace Zaxbux\EditorJS\Behaviors;
 
 use Winter\Storm\Extension\ExtensionBase;
 use System\Classes\PluginManager;
@@ -8,7 +8,7 @@ use EditorJS\EditorJSException;
 
 /**
  * Class ConvertableBehavior
- * @package ReaZzon\Editor\Classes\Behaviors
+ * @package Zaxbux\EditorJS\Classes\Behaviors
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 abstract class ConvertableBehavior extends ExtensionBase

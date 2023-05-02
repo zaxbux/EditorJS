@@ -1,12 +1,12 @@
-<?php namespace ReaZzon\Editor\Traits;
+<?php namespace Zaxbux\EditorJS\Traits;
 
 use Response;
-use ReaZzon\Editor\Models\Settings;
+use Zaxbux\EditorJS\Models\Settings;
 
 /**
  * PluginHelper
  *
- * @package ReaZzon\Editor\Traits;
+ * @package Zaxbux\EditorJS\Traits;
  * @author Nick Khaetsky, nick@reazzon.ru
  * @deprecated
  */

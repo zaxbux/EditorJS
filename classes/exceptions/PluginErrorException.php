@@ -1,10 +1,10 @@
-<?php namespace ReaZzon\Editor\Classes\Exceptions;
+<?php namespace Zaxbux\EditorJS\Classes\Exceptions;
 
 use Winter\Storm\Exception\ApplicationException;
 
 /**
  * Class PluginErrorException
- * @package ReaZzon\Editor\Classes\Exceptions
+ * @package Zaxbux\EditorJS\Classes\Exceptions
  */
 class PluginErrorException extends ApplicationException
 {

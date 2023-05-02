@@ -1,15 +1,15 @@
-<?php namespace ReaZzon\Editor\Classes\Plugins\Image;
+<?php namespace Zaxbux\EditorJS\Classes\Plugins\Image;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use ReaZzon\Editor\Classes\Exceptions\PluginErrorException;
-use ReaZzon\Editor\Classes\Plugins\Image\Resources\ImageResource;
+use Zaxbux\EditorJS\Classes\Exceptions\PluginErrorException;
+use Zaxbux\EditorJS\Classes\Plugins\Image\Resources\ImageResource;
 use System\Models\File;
 
 /**
  * Image Plugin
- * @package ReaZzon\Editor\Classes\Plugins\Image
+ * @package Zaxbux\EditorJS\Classes\Plugins\Image
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class Plugin

@@ -1,6 +1,6 @@
 <?php
 
-namespace ReaZzon\Editor\Classes\Event;
+namespace Zaxbux\EditorJS\Classes\Event;
 
 use Backend\Widgets\Form;
 use Winter\Storm\Events\Dispatcher;
@@ -53,14 +53,14 @@ abstract class AbstractFormExtender
 
     private function setFormWidget() {
         $this->fieldType = 'editorjs';
-        $this->fieldWidgetPath = \ReaZzon\Editor\FormWidgets\EditorJS::class;
+        $this->fieldWidgetPath = \Zaxbux\EditorJS\FormWidgets\EditorJS::class;
 
         if (
             PluginManager::instance()->hasPlugin('Winter.Translate')
             && !PluginManager::instance()->isDisabled('Winter.Translate')
         ) {
             $this->fieldType = 'mleditorjs';
-            $this->fieldWidgetPath = \ReaZzon\Editor\FormWidgets\MLEditorJS::class;
+            $this->fieldWidgetPath = \Zaxbux\EditorJS\FormWidgets\MLEditorJS::class;
         }
     }
 }

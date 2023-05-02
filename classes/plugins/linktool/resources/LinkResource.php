@@ -1,11 +1,11 @@
-<?php namespace ReaZzon\Editor\Classes\Plugins\LinkTool\Resources;
+<?php namespace Zaxbux\EditorJS\Classes\Plugins\LinkTool\Resources;
 
 
 use Illuminate\Http\Resources\Json\Resource;
 
 /**
  * Class LinkResource
- * @package ReaZzon\Editor\Classes\Plugins\LinkTool\Resources
+ * @package Zaxbux\EditorJS\Classes\Plugins\LinkTool\Resources
  */
 class LinkResource extends Resource
 {

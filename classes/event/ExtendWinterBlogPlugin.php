@@ -1,12 +1,12 @@
-<?php namespace ReaZzon\Editor\Classes\Event;
+<?php namespace Zaxbux\EditorJS\Classes\Event;
 
 use Backend\Widgets\Form;
 use System\Classes\PluginManager;
-use ReaZzon\Editor\Models\Settings;
+use Zaxbux\EditorJS\Models\Settings;
 
 /**
  * Extends the `Winter.Blog` plugin, replacing the *content* field richeditor with the EditorJS editor.
- * @package ReaZzon\Editor\Classes\Event
+ * @package Zaxbux\EditorJS\Classes\Event
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class ExtendWinterBlogPlugin extends AbstractFormExtender
@@ -23,7 +23,7 @@ class ExtendWinterBlogPlugin extends AbstractFormExtender
     {
         // Replacing original content_html attribute.
         $this->modelClass::extend(function ($model) {
-            $model->implement[] = \ReaZzon\Editor\Behaviors\ConvertToHtml::class;
+            $model->implement[] = \Zaxbux\EditorJS\Behaviors\ConvertToHtml::class;
 
             $model->bindEvent('model.getAttribute', function ($attribute, $value) use ($model) {
                 if ($attribute == 'content_html') {

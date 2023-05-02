@@ -1,4 +1,4 @@
-<?php namespace ReaZzon\Editor\FormWidgets;
+<?php namespace Zaxbux\EditorJS\FormWidgets;
 
 use Event;
 use System\Classes\PluginManager;
@@ -6,12 +6,12 @@ use Backend\Classes\FormWidgetBase;
 
 /**
  * EditorJS Form Widget
- * @package ReaZzon\Editor\FormWidgets
+ * @package Zaxbux\EditorJS\FormWidgets
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class EditorJS extends FormWidgetBase
 {
-    const EVENT_CONFIG_BUILT = 'reazzon.editorjs.config.built';
+    const EVENT_CONFIG_BUILT = 'zaxbux.editorjs.config.built';
 
     /**
      * @inheritDoc
@@ -68,9 +68,9 @@ class EditorJS extends FormWidgetBase
     protected function loadAssets()
     {
         $this->prepareBlocks();
-        $this->addCss('css/formwidget.css', 'ReaZzon.Editor');
-        $this->addJs('js/formwidget.js', 'ReaZzon.Editor');
-        $this->addJs('js/vendor.js', 'ReaZzon.Editor');
+        $this->addCss('css/formwidget.css', 'Zaxbux.EditorJS');
+        $this->addJs('js/formwidget.js', 'Zaxbux.EditorJS');
+        $this->addJs('js/vendor.js', 'Zaxbux.EditorJS');
     }
 
     /**
@@ -94,7 +94,7 @@ class EditorJS extends FormWidgetBase
             /**
              * Extend config, add your own settings to already existing plugins.
              *
-             * Event::listen(\ReaZzon\Editor\FormWidgets\EditorJS::EVENT_CONFIG_BUILT, function($blocks) {
+             * Event::listen(\Zaxbux\EditorJS\FormWidgets\EditorJS::EVENT_CONFIG_BUILT, function($blocks) {
              *
              *     foreach($blocks['settings'] as $settings) {
              *          // ..

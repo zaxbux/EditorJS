@@ -1,10 +1,10 @@
-<?php namespace ReaZzon\Editor\FormWidgets;
+<?php namespace Zaxbux\EditorJS\FormWidgets;
 
 use Winter\Translate\Models\Locale;
 
 /**
  * MLEditorJS Form Widget
- * @package ReaZzon\Editor\FormWidgets
+ * @package Zaxbux\EditorJS\FormWidgets
  * @author Nick Khaetsky, rzzsapb@gmail.com
  */
 class MLEditorJS extends EditorJS
@@ -82,7 +82,7 @@ class MLEditorJS extends EditorJS
      */
     protected function getParentViewPath()
     {
-        return base_path().'/plugins/reazzon/editor/formwidgets/editorjs/partials';
+        return base_path().'/plugins/zaxbux/editorjs/formwidgets/editorjs/partials';
     }
 
     /**
@@ -90,6 +90,6 @@ class MLEditorJS extends EditorJS
      */
     protected function getParentAssetPath()
     {
-        return '/plugins/reazzon/editor/formwidgets/editorjs/assets';
+        return '/plugins/zaxbux/editorjs/formwidgets/editorjs/assets';
     }
 }

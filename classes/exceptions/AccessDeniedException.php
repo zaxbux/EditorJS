@@ -1,9 +1,9 @@
-<?php namespace ReaZzon\Editor\Classes\Exceptions;
+<?php namespace Zaxbux\EditorJS\Classes\Exceptions;
 
 
 /**
  * Class AccessDeniedException
- * @package ReaZzon\Editor\Classes\Exceptions
+ * @package Zaxbux\EditorJS\Classes\Exceptions
  */
 class AccessDeniedException extends PluginErrorException
 {

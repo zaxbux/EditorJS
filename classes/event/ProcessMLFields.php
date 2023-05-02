@@ -1,8 +1,8 @@
-<?php namespace ReaZzon\Editor\Classes\Event;
+<?php namespace Zaxbux\EditorJS\Classes\Event;
 
 /**
  * Class ProcessMLFields
- * @package ReaZzon\Editor\Classes\Event
+ * @package Zaxbux\EditorJS\Classes\Event
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class ProcessMLFields

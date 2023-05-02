@@ -1,12 +1,12 @@
-<?php namespace ReaZzon\Editor\Classes\Event;
+<?php namespace Zaxbux\EditorJS\Classes\Event;
 
 use Backend\Widgets\Form;
 use System\Classes\PluginManager;
-use ReaZzon\Editor\Models\Settings;
+use Zaxbux\EditorJS\Models\Settings;
 
 /**
  * Extends the `Winter.Pages` plugin, replacing the *content* field richeditor with the EditorJS editor.
- * @package ReaZzon\Editor\Classes\Event
+ * @package Zaxbux\EditorJS\Classes\Event
  * @author Nick Khaetsky, nick@reazzon.ru
  */
 class ExtendWinterPagesPlugin extends AbstractFormExtender
@@ -28,7 +28,7 @@ class ExtendWinterPagesPlugin extends AbstractFormExtender
     {
         \Winter\Pages\Classes\Page::extend(function ($model) {
             /** @var \Winter\Storm\Database\Model $model */
-            $model->implement[] = 'ReaZzon.Editor.Behaviors.ConvertToHtml';
+            $model->implement[] = \Zaxbux\EditorJS\Behaviors\ConvertToHtml::class;
 
             $model->bindEvent('model.beforeSave', function () use ($model) {
                 $model->markup = $model->convertJsonToHtml($model->viewBag['editor']);
@@ -40,7 +40,7 @@ class ExtendWinterPagesPlugin extends AbstractFormExtender
 
             \Winter\Translate\Classes\MLPage::extend(function ($model) {
                 /** @var \Winter\Stirm\Database\Model $model */
-                $model->implement[] = \ReaZzon\Editor\Behaviors\ConvertToHtml::class;
+                $model->implement[] = \Zaxbux\EditorJS\Behaviors\ConvertToHtml::class;
 
                 $model->bindEvent('model.beforeSave', function () use ($model) {
                     if (isset($model->viewBag['editor']) && !empty($model->viewBag['editor'])) {

@@ -1,14 +1,14 @@
-<?php namespace ReaZzon\Editor\Classes\Middlewares;
+<?php namespace Zaxbux\EditorJS\Classes\Middlewares;
 
 use Backend\Facades\BackendAuth;
 use Illuminate\Http\Request;
 use Winter\Storm\Support\Str;
-use ReaZzon\Editor\Classes\Exceptions\AccessDeniedException;
-use ReaZzon\Editor\Models\Settings;
+use Zaxbux\EditorJS\Classes\Exceptions\AccessDeniedException;
+use Zaxbux\EditorJS\Models\Settings;
 
 /**
  * Class PluginGroupMiddleware
- * @package ReaZzon\Editor\Classes\Middlewares
+ * @package Zaxbux\EditorJS\Classes\Middlewares
  */
 class PluginGroupMiddleware
 {
