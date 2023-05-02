@@ -1,4 +1,6 @@
-<?php namespace ReaZzon\Editor\Models;
+<?php
+
+namespace ReaZzon\Editor\Models;
 
 use Model;
 
@@ -9,7 +11,9 @@ use Model;
  */
 class Settings extends Model
 {
-    public $implement = ['System.Behaviors.SettingsModel'];
+    public $implement = [
+        \System\Behaviors\SettingsModel::class,
+    ];
 
     /**
      * @var string A unique code

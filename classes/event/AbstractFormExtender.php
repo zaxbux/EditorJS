@@ -1,4 +1,6 @@
-<?php namespace ReaZzon\Editor\Classes\Event;
+<?php
+
+namespace ReaZzon\Editor\Classes\Event;
 
 use Backend\Widgets\Form;
 use Winter\Storm\Events\Dispatcher;
@@ -14,35 +16,29 @@ abstract class AbstractFormExtender
 
     public function subscribe(Dispatcher $event)
     {
+        if (!$this->isEnabled()) {
+            return;
+        }
+
         $this->controllerClass = $this->getControllerClass();
         $this->modelClass = $this->getModelClass();
 
-        $this->fieldType = 'editorjs';
-        $this->fieldWidgetPath = 'ReaZzon\Editor\FormWidgets\EditorJS';
+        $this->setFormWidget();
 
-        if (PluginManager::instance()->hasPlugin('RainLab.Translate')
-            && !PluginManager::instance()->isDisabled('RainLab.Translate')) {
-            $this->fieldType = 'mleditorjs';
-            $this->fieldWidgetPath = 'ReaZzon\Editor\FormWidgets\MLEditorJS';
-        }
+        $event->listen('backend.form.extendFields', function (Form $widget) {
 
-        if ($this->isEnabled()) {
-            $event->listen('backend.form.extendFields', function (Form $widget) {
+            if (!$widget->getController() instanceof $this->controllerClass) {
+                return;
+            }
 
-                if (!$widget->getController() instanceof $this->controllerClass) {
-                    return;
-                }
+            if (!$widget->model instanceof $this->modelClass) {
+                return;
+            }
 
-                if (!$widget->model instanceof $this->modelClass) {
-                    return;
-                }
+            $this->replaceField($widget);
+        });
 
-                $this->replaceField($widget);
-
-            });
-
-            $this->extendModel();
-        }
+        $this->extendModel();
     }
 
     abstract protected function replaceField(Form $widget);
@@ -54,4 +50,17 @@ abstract class AbstractFormExtender
     abstract protected function getModelClass();
 
     abstract protected function isEnabled();
+
+    private function setFormWidget() {
+        $this->fieldType = 'editorjs';
+        $this->fieldWidgetPath = \ReaZzon\Editor\FormWidgets\EditorJS::class;
+
+        if (
+            PluginManager::instance()->hasPlugin('Winter.Translate')
+            && !PluginManager::instance()->isDisabled('Winter.Translate')
+        ) {
+            $this->fieldType = 'mleditorjs';
+            $this->fieldWidgetPath = \ReaZzon\Editor\FormWidgets\MLEditorJS::class;
+        }
+    }
 }

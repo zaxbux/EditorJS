@@ -18,8 +18,6 @@ class EditorJS extends FormWidgetBase
      */
     protected $defaultAlias = 'editorjs';
 
-    public $stretch;
-
     public $settings = [];
 
     public $blocksSettings = [];

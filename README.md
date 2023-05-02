@@ -51,7 +51,7 @@ You are not limited of how many editors can be rendered at one page.
 
 ### How to enable integrations
 
-1. Make sure that the desirable plugin for integration is installed in system (list of supported plugins listed in Key Features section) 
+1. Make sure that the desirable plugin for integration is installed in system (list of supported plugins listed in Key Features section)
 2. Go to Settings
 3. In the sidebar find `Editor Settings` button inside `Editor tab`
 4. Enable desirable integrations

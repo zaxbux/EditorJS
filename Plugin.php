@@ -82,7 +82,7 @@ class Plugin extends PluginBase
                 'label' => 'reazzon.editor::lang.settings.menu_label',
                 'description' => 'reazzon.editor::lang.settings.menu_description',
                 'category' => 'reazzon.editor::lang.plugin.name',
-                'class' => 'ReaZzon\Editor\Models\Settings',
+                'class' => \ReaZzon\Editor\Models\Settings::class,
                 'permissions' => ['reazzon.editor.access_settings'],
                 'icon' => 'icon-cog',
                 'order' => 500,
@@ -98,8 +98,8 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'ReaZzon\Editor\FormWidgets\EditorJS' => 'editorjs',
-            'ReaZzon\Editor\FormWidgets\MLEditorJS' => 'mleditorjs',
+            \ReaZzon\Editor\FormWidgets\EditorJS::class => 'editorjs',
+            \ReaZzon\Editor\FormWidgets\MLEditorJS::class => 'mleditorjs',
         ];
     }
 
