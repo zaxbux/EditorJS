@@ -8,10 +8,8 @@ use ReaZzon\Editor\Classes\Event\ProcessMLFields;
 use ReaZzon\Editor\Classes\Exceptions\PluginErrorException;
 
 use ReaZzon\Editor\Behaviors\ConvertToHtml;
-use ReaZzon\Editor\Classes\Event\ExtendRainLabBlog;
-use ReaZzon\Editor\Classes\Event\ExtendIndicatorNews;
-use ReaZzon\Editor\Classes\Event\ExtendLovataGoodNews;
-use ReaZzon\Editor\Classes\Event\ExtendRainLabStaticPages;
+use ReaZzon\Editor\Classes\Event\ExtendWinterBlogPlugin;
+use ReaZzon\Editor\Classes\Event\ExtendWinterPagesPlugin;
 
 /**
  * Editor Plugin Information File
@@ -52,10 +50,8 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        Event::subscribe(ExtendRainLabBlog::class);
-        Event::subscribe(ExtendRainLabStaticPages::class);
-        Event::subscribe(ExtendLovataGoodNews::class);
-        Event::subscribe(ExtendIndicatorNews::class);
+        Event::subscribe(ExtendWinterBlogPlugin::class);
+        Event::subscribe(ExtendWinterPagesPlugin::class);
         Event::subscribe(ProcessMLFields::class);
     }
 

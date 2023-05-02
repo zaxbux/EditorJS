@@ -10,10 +10,8 @@ Meet the new Editor. The most advanced "WYSWYG" (if you can say so) editor ever.
 - Native OctoberCMS events support for convenient extending of custom blocks
 
 **Integrations ready:**
-- RainLab.Blog
-- RainLab.StaticPages
-- Lovata.GoodNews
-- Indikator.News
+- Winter.Blog
+- Winter.Pages
 
 **Blocks supported:**
 - Paragraph

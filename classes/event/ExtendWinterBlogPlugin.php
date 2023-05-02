@@ -5,16 +5,16 @@ use System\Classes\PluginManager;
 use ReaZzon\Editor\Models\Settings;
 
 /**
- * Class ExtendRainLabBlog
+ * Extends the `Winter.Blog` plugin, replacing the *content* field richeditor with the EditorJS editor.
  * @package ReaZzon\Editor\Classes\Event
  * @author Nick Khaetsky, nick@reazzon.ru
  */
-class ExtendRainLabBlog extends AbstractFormExtender
+class ExtendWinterBlogPlugin extends AbstractFormExtender
 {
     protected function replaceField(Form $widget)
     {
         if ($field = $widget->getField('content')) {
-            $field->displayAs($this->fieldWidgetPath);
+            $field->displayAs('widget', ['widget' => $this->fieldWidgetPath]);
             $field->stretch = true;
         }
     }
@@ -23,7 +23,7 @@ class ExtendRainLabBlog extends AbstractFormExtender
     {
         // Replacing original content_html attribute.
         $this->modelClass::extend(function ($model) {
-            $model->implement[] = 'ReaZzon.Editor.Behaviors.ConvertToHtml';
+            $model->implement[] = \ReaZzon\Editor\Behaviors\ConvertToHtml::class;
 
             $model->bindEvent('model.getAttribute', function ($attribute, $value) use ($model) {
                 if ($attribute == 'content_html') {
@@ -41,18 +41,18 @@ class ExtendRainLabBlog extends AbstractFormExtender
 
     protected function getControllerClass()
     {
-        return \RainLab\Blog\Controllers\Posts::class;
+        return \Winter\Blog\Controllers\Posts::class;
     }
 
     protected function getModelClass()
     {
-        return \RainLab\Blog\Models\Post::class;
+        return \Winter\Blog\Models\Post::class;
     }
 
     protected function isEnabled()
     {
-        if (Settings::get('integration_blog', false) &&
-            PluginManager::instance()->hasPlugin('RainLab.Blog')) {
+        if (Settings::get('integration_winter_blog', false) &&
+            PluginManager::instance()->hasPlugin('Winter.Blog')) {
             return true;
         }
 
