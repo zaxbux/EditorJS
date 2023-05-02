@@ -3,16 +3,20 @@
  *
  * You can delete this file if you want
  */
-.editorjs-wrapper{
+.field-editorjs {
     background-color: #ffffff;
     border: 1px solid #d1d6d9;
     border-radius: 3px;
     padding: 20px 0;
 }
 
+.field-editorjs.stretch {
+    border-radius: 0 !important;
+}
+
 .field-multilingual-editorjs,
-.editorjs-wrapper,
-.editorjs-wrapper .codex-editor,
-.editorjs-wrapper .codex-editor .codex-editor__redactor{
+.field-editorjs,
+.field-editorjs .codex-editor,
+.field-editorjs .codex-editor .codex-editor__redactor{
     height: 100%;
 }

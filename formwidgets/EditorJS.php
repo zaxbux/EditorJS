@@ -52,6 +52,7 @@ class EditorJS extends FormWidgetBase
      */
     public function prepareVars()
     {
+        $this->vars['stretch'] = $this->formField->stretch;
         $this->vars['name'] = $this->formField->getName();
         $this->vars['value'] = $this->getLoadValue();
         $this->vars['model'] = $this->model;
