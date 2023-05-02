@@ -1,6 +1,6 @@
 <?php namespace ReaZzon\Editor\Behaviors;
 
-use October\Rain\Extension\ExtensionBase;
+use Winter\Storm\Extension\ExtensionBase;
 use System\Classes\PluginManager;
 
 use EditorJS\EditorJS;
@@ -14,7 +14,7 @@ use EditorJS\EditorJSException;
 abstract class ConvertableBehavior extends ExtensionBase
 {
     /**
-     * @var \October\Rain\Database\Model Reference to the extended model.
+     * @var \Winter\Storm\Database\Model Reference to the extended model.
      */
     protected $model;
 

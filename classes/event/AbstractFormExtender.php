@@ -1,7 +1,7 @@
 <?php namespace ReaZzon\Editor\Classes\Event;
 
 use Backend\Widgets\Form;
-use October\Rain\Events\Dispatcher;
+use Winter\Storm\Events\Dispatcher;
 use System\Classes\PluginManager;
 
 abstract class AbstractFormExtender

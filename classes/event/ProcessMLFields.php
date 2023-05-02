@@ -20,9 +20,9 @@ class ProcessMLFields
             }
 
             if (
-                !$model->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel') &&
-                !$model->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatablePage') &&
-                !$model->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableCmsObject')
+                !$model->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableModel') &&
+                !$model->isClassExtendedWith('Winter.Translate.Behaviors.TranslatablePage') &&
+                !$model->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableCmsObject')
             ) {
                 return;
             }

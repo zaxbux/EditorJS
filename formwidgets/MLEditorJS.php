@@ -1,6 +1,6 @@
 <?php namespace ReaZzon\Editor\FormWidgets;
 
-use RainLab\Translate\Models\Locale;
+use Winter\Translate\Models\Locale;
 
 /**
  * MLEditorJS Form Widget
@@ -9,7 +9,7 @@ use RainLab\Translate\Models\Locale;
  */
 class MLEditorJS extends EditorJS
 {
-    use \RainLab\Translate\Traits\MLControl;
+    use \Winter\Translate\Traits\MLControl;
 
     /**
      * @inheritDoc

@@ -25,10 +25,10 @@ class RefreshStaticPages extends Command
     public function handle()
     {
         $this->info('Start of resaving...');
-        $pages = \RainLab\Pages\Classes\Page::sortBy('title')->lists('title', 'baseFileName');
+        $pages = \Winter\Pages\Classes\Page::sortBy('title')->lists('title', 'baseFileName');
 
         foreach($pages as $fileName => $fileTitle) {
-            $page = \RainLab\Pages\Classes\Page::loadCached(\Cms\Classes\Theme::getActiveTheme(), $fileName);
+            $page = \Winter\Pages\Classes\Page::loadCached(\Cms\Classes\Theme::getActiveTheme(), $fileName);
             $page->save();
         }
         $this->info('End of resaving...');

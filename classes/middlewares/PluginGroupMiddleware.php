@@ -2,7 +2,7 @@
 
 use Backend\Facades\BackendAuth;
 use Illuminate\Http\Request;
-use October\Rain\Support\Str;
+use Winter\Storm\Support\Str;
 use ReaZzon\Editor\Classes\Exceptions\AccessDeniedException;
 use ReaZzon\Editor\Models\Settings;
 

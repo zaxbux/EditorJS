@@ -18,11 +18,11 @@ return [
                            так как Editor вероятнее всего сможет затереть их. Рекомендуется включать интеграции только на свежую установку системы!'
             ],
             'static_pages' => [
-                'name' => 'RainLab.StaticPages интеграция',
+                'name' => 'Winter.Pages интеграция',
                 'comment' => 'Замена стандартного визуального редактора у поля `markup` на Editor.',
             ],
             'blog' => [
-                'name' => 'RainLab.Blog интеграция',
+                'name' => 'Winter.Blog интеграция',
                 'comment' => 'Замена стандартного визуального редактора у поля `content` на Editor.'
             ],
             'good_news' => [

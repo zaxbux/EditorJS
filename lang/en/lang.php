@@ -17,11 +17,11 @@ return [
                 'text' => 'if you already have records in plugins below, they can be corrupted after saving with Editor integration enabled!!! Use integrations only on fresh install!!!'
             ],
             'static_pages' => [
-                'name' => 'RainLab.StaticPages Integration',
+                'name' => 'Winter.Pages Integration',
                 'comment' => 'Switching default richeditor in `markup` field to Editor.'
             ],
             'blog' => [
-                'name' => 'RainLab.Blog Integration',
+                'name' => 'Winter.Blog Integration',
                 'comment' => 'Switching default richeditor in `content` field to Editor.'
             ],
             'good_news' => [

@@ -1,6 +1,6 @@
 <?php namespace ReaZzon\Editor\Classes\Exceptions;
 
-use October\Rain\Exception\ApplicationException;
+use Winter\Storm\Exception\ApplicationException;
 
 /**
  * Class PluginErrorException

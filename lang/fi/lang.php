@@ -17,11 +17,11 @@ return [
                 'text' => 'mikäli sinulla on tietueita alla olevissa plugineissa, tiedot voivat tuhoutua Editorin käyttöönoton yhteydessä!!! Käytä integraatioita vain uudessa asennuksessa!!!'
             ],
             'static_pages' => [
-                'name' => 'RainLab.StaticPages-integraatio',
+                'name' => 'Winter.Pages-integraatio',
                 'comment' => 'Vaihdetaan oletus richeditor `markup` kentästä tähän Editoriin.'
             ],
             'blog' => [
-                'name' => 'RainLab.Blog-integraatio',
+                'name' => 'Winter.Blog-integraatio',
                 'comment' => 'Vaihdetaan oletus richeditor `content` kentästä tähän Editoriin.'
             ],
             'good_news' => [
